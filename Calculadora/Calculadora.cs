@@ -26,7 +26,14 @@ namespace EspacioCalculadora
 
         public void Dividir(double termino)
         {
-
+            if(termino != 0)
+            {
+                dato /= termino;
+            }
+            else
+            {
+                Console.WriteLine("No se puede dividir por 0");
+            }
         }
 
         public void Limpiar()
