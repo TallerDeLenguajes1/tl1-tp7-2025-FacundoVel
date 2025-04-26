@@ -21,7 +21,7 @@ namespace EspacioCalculadora
 
         public void Multiplicar(double termino)
         {
-
+            dato *= termino;
         }
 
         public void Dividir(double termino)
