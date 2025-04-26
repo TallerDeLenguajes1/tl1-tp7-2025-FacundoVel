@@ -38,7 +38,7 @@ namespace EspacioCalculadora
 
         public void Limpiar()
         {
-
+            dato = 0;
         }
     }
 
