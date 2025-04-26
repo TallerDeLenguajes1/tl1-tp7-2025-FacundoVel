@@ -1,2 +1,6 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using EspacioCalculadora;
+
+Calculadora calculadora1 = new Calculadora();
+calculadora1.Suma(10);
+Console.WriteLine(calculadora1.Resultado)
+

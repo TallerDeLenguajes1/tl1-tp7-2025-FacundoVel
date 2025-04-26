@@ -1,35 +1,38 @@
-namespace EspacioCalculadora;
-
-public class Calculadora
+namespace EspacioCalculadora
 {
-    private double resultado;
-
-    public double resultado{
-        
-    }
-
-
-    public void Sumar(double termino)
+    public class Calculadora
     {
+        private double dato;
 
+        public double Resultado
+        {
+            get => dato;
+        }
+
+
+        public void Sumar(double termino)
+        {
+            dato += termino;
+        }
+        public void Restar(double termino)
+        {
+
+        }
+
+        public void Multiplicar(double termino)
+        {
+
+        }
+
+        public void Dividir(double termino)
+        {
+
+        }
+
+        public void Limpiar()
+        {
+
+        }
     }
-    public void Restar(double termino)
-    {
 
-    }
-
-    public void Multiplicar(double termino)
-    {
-
-    }
-
-    public void Dividir(double termino)
-    {
-
-    }
-
-    public void Limpiar()
-    {
-
-    }
 }
