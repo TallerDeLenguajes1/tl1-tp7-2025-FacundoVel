@@ -1,12 +1,14 @@
-namespace EspacioEmpleado{
+namespace EspacioEmpleado
+{
 
-    enum cargos {
-            Auxiliar,
-            Administrativo,
-            Ingeniero,
-            Especialista,
-            Investigador
-        }
+    public enum cargos 
+    {
+        Auxiliar,
+        Administrativo,
+        Ingeniero, 
+        Especialista,
+        Investigador
+    }
 
     public class Empleado
     {
@@ -47,27 +49,44 @@ namespace EspacioEmpleado{
             set => cargo = value;
         }
 
-    }
+        public int ObtenerAntiguedad()
+        {
+            DateTime hoy = DateTime.Today;
+            int antiguedad = hoy.Year - fechaDeIngreso.Year;
+            return antiguedad;
+        }
 
-    public int ObtenerAntiguedad()
-    {
-        DateTime hoy = DateTime.Today;
-        int antiguedad = hoy.Year - fechaDeIngreso.Year;
-        return antiguedad;
-    }
+        public int ObtenerEdad()
+        {
+            DateTime hoy = DateTime.Today;
+            int edad = hoy.Year - fechaNacimiento.Year;
+            return edad;
+        }
 
-    public int ObtenerEdad()
-    {
-        DateTime hoy = DateTime.Today;
-        int edad = hoy.Year - fechaNacimiento.Year;
-        return edad;
-    }
+        public int AñosParaJubilacion()
+        {
+            int edadActual = ObtenerEdad();
+            int edadJubilacion = 65;
+            int añosParaJubilacion = edadJubilacion - edadActual;
+            return añosParaJubilacion;
+        }
 
-    public int AñosParaJubilacion()
-    {
-        int edadActual = ObtenerEdad();
-        int edadJubilacion = 65;
-        int añosParaJubilacion = edadJubilacion - edadActual;
-        return añosParaJubilacion;
+        public double CalcularSalario()
+        {
+            double adicional = 0;
+            int antiguedad = ObtenerAntiguedad();
+            if (antiguedad < 20)
+                adicional += sueldoBasico * (antiguedad * 0.01);
+            else
+                adicional += sueldoBasico * 0.25;
+
+            if (cargo == cargos.Ingeniero || cargo == cargos.Especialista)
+                adicional *= 1.5;
+
+            if (estadoCivil == 'C')
+                adicional += 150000;
+
+            return sueldoBasico + adicional;
+        }
     }
 }
