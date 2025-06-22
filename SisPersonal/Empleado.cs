@@ -62,4 +62,12 @@ namespace EspacioEmpleado{
         int edad = hoy.Year - fechaNacimiento.Year;
         return edad;
     }
+
+    public int AñosParaJubilacion()
+    {
+        int edadActual = ObtenerEdad();
+        int edadJubilacion = 65;
+        int añosParaJubilacion = edadJubilacion - edadActual;
+        return añosParaJubilacion;
+    }
 }
