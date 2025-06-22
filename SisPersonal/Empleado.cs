@@ -48,4 +48,18 @@ namespace EspacioEmpleado{
         }
 
     }
+
+    public int ObtenerAntiguedad()
+    {
+        DateTime hoy = DateTime.Today;
+        int antiguedad = hoy.Year - fechaDeIngreso.Year;
+        return antiguedad;
+    }
+
+    public int ObtenerEdad()
+    {
+        DateTime hoy = DateTime.Today;
+        int edad = hoy.Year - fechaNacimiento.Year;
+        return edad;
+    }
 }
